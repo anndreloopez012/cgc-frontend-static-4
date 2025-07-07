@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, Menu, X, Home, Users, Scale, Settings, BookOpen, Link, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import BentoMegaMenu from './BentoMegaMenu';
+import SimpleMegaMenu from './SimpleMegaMenu';
 import MobileMenu from './MobileMenu';
 import { useContentAPI } from '@/hooks/useContentAPI';
 
@@ -148,7 +148,7 @@ const Header: React.FC<HeaderProps> = ({ showSidebarButton = false, onSidebarBut
         onMouseEnter={() => setActiveMegaMenu(activeMegaMenu)}
         onMouseLeave={handleMouseLeave}
       >
-        <BentoMegaMenu 
+        <SimpleMegaMenu 
           isOpen={!!activeMegaMenu} 
           activeMenu={activeMegaMenu}
           onMouseEnter={() => setActiveMegaMenu(activeMegaMenu)}

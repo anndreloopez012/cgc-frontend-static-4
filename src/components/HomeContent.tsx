@@ -53,10 +53,38 @@ const HomeContent = () => {
 
   return (
     <div className="bg-background min-h-screen">
-      {/* Slider de imágenes heroicas */}
+      {/* Slider de imágenes heroicas con imágenes laterales */}
       <section className="py-6">
-        <div className="w-full">
-          <ImageSlider />
+        <div className="w-full flex gap-4">
+          {/* Slider principal */}
+          <div className="flex-1">
+            <ImageSlider />
+          </div>
+          
+          {/* Imágenes laterales */}
+          <div className="hidden lg:flex flex-col w-80 gap-2">
+            <div className="flex-1 rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/0668c0c5-12dc-447e-bcdd-0739f72418a3.png" 
+                alt="Prevención y buena gobernanza construyen Confianza" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="flex-1 rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/f0e48dd3-17d8-4ba2-91b9-98f23f3165d6.png" 
+                alt="CGC Portal Web" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="flex-1 rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/00fbccf4-a330-4860-961f-38698eedee8f.png" 
+                alt="CLIC - El Poder Anticorrupción" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
