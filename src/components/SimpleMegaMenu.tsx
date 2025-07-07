@@ -41,7 +41,7 @@ const SimpleMegaMenu: React.FC<SimpleMegaMenuProps> = ({
 
   return (
     <div 
-      className="absolute top-full left-0 right-0 z-40 bg-white shadow-xl border-t border-gray-100"
+      className="fixed top-20 left-0 right-0 z-50 bg-white shadow-xl border-t border-gray-100"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

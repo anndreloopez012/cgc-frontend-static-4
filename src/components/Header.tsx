@@ -142,9 +142,9 @@ const Header: React.FC<HeaderProps> = ({ showSidebarButton = false, onSidebarBut
         </header>
       </div>
 
-      {/* Mega menú de escritorio - Pegado directamente al nav sin espacio */}
+      {/* Mega menú de escritorio - Posicionado de forma fija */}
       <div 
-        className="absolute top-full left-0 right-0 z-40"
+        className="relative z-50"
         onMouseEnter={() => setActiveMegaMenu(activeMegaMenu)}
         onMouseLeave={handleMouseLeave}
       >
