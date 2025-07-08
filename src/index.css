@@ -262,3 +262,13 @@ button {
 .pdf-loading {
   animation: pdfLoader 1s linear infinite;
 }
+
+/* Animación de scroll automático para carruseles */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

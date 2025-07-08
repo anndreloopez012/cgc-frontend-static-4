@@ -130,15 +130,18 @@ const HomeContent = () => {
           </h2>
           <div className="w-20 h-1 bg-yellow-500 rounded-full mx-auto"></div>
         </div>
-        <div className="overflow-x-auto">
-          <div className="flex gap-6 pb-4 px-4 min-w-max">
+        <div className="overflow-hidden">
+          <div className="flex gap-6 pb-4 px-4 animate-[scroll_20s_linear_infinite] hover:[animation-play-state:paused]">
             {[
               { title: 'Estado de Cuenta', route: '/estado-cuenta', icon: 'https://cdn-icons-png.flaticon.com/512/1055/1055645.png' },
               { title: 'Solicitud de Finiquito', route: '/solicitud-finiquito', icon: 'https://cdn-icons-png.flaticon.com/512/2920/2920349.png' },
               { title: 'Comunicaciones Electrónicas', route: '/comunicaciones-electronicas', icon: 'https://cdn-icons-png.flaticon.com/512/1161/1161388.png' },
               { title: 'Registro de Títulos', route: '/registro-titulos', icon: 'https://cdn-icons-png.flaticon.com/512/2920/2920277.png' },
               { title: 'Actualización de Datos', route: '/actualizacion-datos', icon: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png' },
-              { title: 'Declaración Jurada Patrimonial', route: '/declaracion-patrimonial', icon: 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png' }
+              { title: 'Declaración Jurada Patrimonial', route: '/declaracion-patrimonial', icon: 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png' },
+              { title: 'Estado de Cuenta', route: '/estado-cuenta', icon: 'https://cdn-icons-png.flaticon.com/512/1055/1055645.png' },
+              { title: 'Solicitud de Finiquito', route: '/solicitud-finiquito', icon: 'https://cdn-icons-png.flaticon.com/512/2920/2920349.png' },
+              { title: 'Comunicaciones Electrónicas', route: '/comunicaciones-electronicas', icon: 'https://cdn-icons-png.flaticon.com/512/1161/1161388.png' }
             ].map((item, index) => (
               <div key={index} className="flex flex-col items-center space-y-4 cursor-pointer group flex-shrink-0 w-40" onClick={() => handleNavigation(item.route)}>
                 <div className="w-24 h-24 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center hover:scale-105 transition-all duration-300 hover:shadow-xl">
@@ -164,12 +167,12 @@ const HomeContent = () => {
               </p>
               <div className="w-20 h-1 bg-yellow-500 rounded-full mx-auto"></div>
             </div>
-            <div className="overflow-x-auto">
-              <div className="flex gap-6 pb-4 px-4 min-w-max">
-                {menuData.menuItems.map((item, index) => {
+            <div className="overflow-hidden">
+              <div className="flex gap-6 pb-4 px-4 animate-[scroll_25s_linear_infinite] hover:[animation-play-state:paused]">
+                {menuData.menuItems.concat(menuData.menuItems.slice(0, 3)).map((item, index) => {
                   const IconComponent = iconMap[item.icon] || FileText;
                   return (
-                    <div key={item.id} className="flex flex-col items-center space-y-4 cursor-pointer group flex-shrink-0 w-32" onClick={() => handleNavigation(item.route)}>
+                    <div key={`${item.id}-${index}`} className="flex flex-col items-center space-y-4 cursor-pointer group flex-shrink-0 w-32" onClick={() => handleNavigation(item.route)}>
                       <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center hover:scale-105 transition-all duration-300 hover:shadow-xl">
                         <IconComponent className="w-10 h-10 text-white drop-shadow-lg" />
                       </div>
@@ -226,8 +229,8 @@ const HomeContent = () => {
             </p>
             <div className="w-20 h-1 bg-white rounded-full mx-auto"></div>
           </div>
-          <div className="overflow-x-auto">
-            <div className="flex gap-4 pb-4 px-4 min-w-max">
+          <div className="overflow-hidden">
+            <div className="flex gap-4 pb-4 px-4 animate-[scroll_30s_linear_infinite] hover:[animation-play-state:paused]">
               {[
                 { route: '/modulo-transicion', title: 'Módulo de Transición', icon: 'https://cdn-icons-png.flaticon.com/512/2920/2920277.png' },
                 { route: '/rendicion-cuentas', title: 'Rendición de Cuentas', icon: 'https://cdn-icons-png.flaticon.com/512/1055/1055645.png' },
@@ -240,7 +243,11 @@ const HomeContent = () => {
                 { route: '/sistema-registro-actas', title: 'Sistema Registro de Actas', icon: 'https://cdn-icons-png.flaticon.com/512/2920/2920349.png' },
                 { route: '/rendicion-cuentas-2', title: 'Rendición de Cuentas', icon: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png' },
                 { route: '/formacion-capacitacion', title: 'Formación y Capacitación', icon: 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png' },
-                { route: '/declaraciones-bienes-muebles', title: 'Declaraciones de Bienes Muebles', icon: 'https://cdn-icons-png.flaticon.com/512/1055/1055687.png' }
+                { route: '/declaraciones-bienes-muebles', title: 'Declaraciones de Bienes Muebles', icon: 'https://cdn-icons-png.flaticon.com/512/1055/1055687.png' },
+                { route: '/modulo-transicion', title: 'Módulo de Transición', icon: 'https://cdn-icons-png.flaticon.com/512/2920/2920277.png' },
+                { route: '/rendicion-cuentas', title: 'Rendición de Cuentas', icon: 'https://cdn-icons-png.flaticon.com/512/1055/1055645.png' },
+                { route: '/registro-titulos', title: 'Registro de Títulos', icon: 'https://cdn-icons-png.flaticon.com/512/2920/2920349.png' },
+                { route: '/bitacora-electronica', title: 'Bitácora Electrónica', icon: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png' }
               ].map((item, index) => (
                 <div key={index} className="flex flex-col items-center space-y-3 cursor-pointer group flex-shrink-0 w-32" onClick={() => handleNavigation(item.route)}>
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover:scale-105 transition-all duration-300 hover:shadow-xl">
